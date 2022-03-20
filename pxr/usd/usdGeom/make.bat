@@ -1,0 +1,1 @@
+rez env usd python -- python D:\packages\usd\21.08\platform-windows\bin\usdGenSchema D:\asunlab\github\xgen-usd\pxr\usd\usdGeom\schema.usda .

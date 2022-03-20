@@ -1,0 +1,62 @@
+#usda 1.0
+(
+    subLayers = [
+        @usdGeom/schema.usda@
+    ]
+) 
+
+over "GLOBAL" (
+    customData = {
+        string libraryName       = "xGen"
+        string libraryPath       = "."
+        string libraryPrefix     = "Usd"
+    }
+) { 
+} 
+
+class XGen "XGen" (
+    doc = """xgen usd geom."""
+    inherits = </Gprim>
+    
+    customData = {
+        dictionary extraPlugInfo = {
+            bool implementsComputeExtent = true
+        }
+    }
+)  {
+    asset file (
+        doc = """xgen file path name."""
+    )
+
+    string palette = "" (
+        doc = """palette."""
+    )
+
+    string description = "" (
+        doc = """description name."""
+    )
+
+    asset geom (
+        doc = """skin geom abc file path name."""
+    )
+
+    string patch = "" (
+        doc = """patch name."""
+    )
+
+    float frame = 1.0 (
+        doc = """frame."""
+    )
+
+    float fps = 24.0 (
+        doc = """fps."""
+    )
+
+    matrix4d world = ((1.0,0.0,0.0,0.0), (0.0,1.0,0.0,0.0), (0.0,0.0,1.0,0.0), (0.0,0.0,0.0,1)) (
+        doc = """world matrix."""
+    )
+
+    float3[] extent = [(-0.5, -0.5, -0.5), (0.5, 0.5, 0.5)] (
+        doc = """Fallback extent value of a box with side length of 1.0."""
+    )
+}
