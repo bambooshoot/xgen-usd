@@ -1,0 +1,1 @@
+rez env usd python -- python /l/packages/pg/third_party/app/usd/20.11/platform-linux/bin/usdGenSchema schema.usda .

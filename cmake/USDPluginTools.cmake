@@ -370,7 +370,7 @@ function(_usd_cpp_library NAME)
     # Install public headers.
     install(
         FILES ${args_PUBLIC_HEADERS}
-        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/${PUBLIC_HEADERS_INSTALL_PREFIX}
+        DESTINATION ${CMAKE_INSTALL_DIR}/${CMAKE_INSTALL_INCLUDEDIR}/${PUBLIC_HEADERS_INSTALL_PREFIX}
     )
 
     # Convert "PLUGIN" into "MODULE".
@@ -414,7 +414,7 @@ function(_usd_cpp_library NAME)
         # meant to be built against.
         install(
             TARGETS ${NAME}
-            LIBRARY DESTINATION ${LIBRARY_INSTALL_PREFIX}
+            LIBRARY DESTINATION ${LIBRARY_INSTALL_PREFIX}/${USD_PLUG_INFO_ROOT_DIR}
         )
     else()
         # Setup SOVERSION & VERSION properties to create
@@ -429,8 +429,8 @@ function(_usd_cpp_library NAME)
         install(
             TARGETS ${NAME}
             EXPORT ${CMAKE_PROJECT_NAME}-targets
-            LIBRARY DESTINATION ${LIBRARY_INSTALL_PREFIX}
-            RUNTIME DESTINATION ${LIBRARY_INSTALL_PREFIX}
+            LIBRARY DESTINATION ${LIBRARY_INSTALL_PREFIX}/${USD_PLUG_INFO_ROOT_DIR}
+            RUNTIME DESTINATION ${LIBRARY_INSTALL_PREFIX}/${USD_PLUG_INFO_ROOT_DIR}
         )
     endif()
 
@@ -455,7 +455,6 @@ endfunction() # _usd_cpp_library
 # Internal function for build a C++ python module with python files.
 #
 function(_usd_python_module NAME)
-    # zhusun's modification
     set(options)
 
     set(oneValueArgs
@@ -660,7 +659,7 @@ function(_usd_compute_library_install_and_file_prefix
     LIBRARY_FILE_PREFIX
 )
     if (TYPE STREQUAL "PLUGIN")
-        set(${LIBRARY_INSTALL_PREFIX} ${USD_PLUGIN_DIR} PARENT_SCOPE)
+        set(${LIBRARY_INSTALL_PREFIX} ${CMAKE_INSTALL_LIBDIR}/${USD_PLUGIN_DIR} PARENT_SCOPE)
         set(${LIBRARY_FILE_PREFIX} "" PARENT_SCOPE)
     else()
         set(${LIBRARY_INSTALL_PREFIX} ${CMAKE_INSTALL_LIBDIR} PARENT_SCOPE)
@@ -744,6 +743,7 @@ function(_usd_target_properties
     target_compile_definitions(${TARGET_NAME}
         PRIVATE
             ${args_DEFINES}
+            PXR_PYTHON_SUPPORT_ENABLED
             ${platform_definitions}
     )
     endif()

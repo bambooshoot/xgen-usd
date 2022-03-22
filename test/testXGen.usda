@@ -1,0 +1,28 @@
+#usda 1.0
+(
+    defaultPrim = "group1"
+    endTimeCode = 1
+    framesPerSecond = 24
+    metersPerUnit = 0.01
+    startTimeCode = 1
+    timeCodesPerSecond = 24
+    upAxis = "Y"
+)
+
+def Xform "group1" (
+    kind = "component"
+)
+{
+    def XGen "xGen" (
+        
+    )
+    {
+        asset file=@xkt/publish/assets/chr/nn_gongshifu/grm/groom/nn_gongshifu.grm.groom/maya/nn_gongshifu__nn_gongshifu_hair_collection.xgen@
+        string palette = "nn_gongshifu_hair_collection"
+        string description = "back_dibu_description"
+        asset geom = @xkt/publish/assets/chr/nn_gongshifu/grm/groom/nn_gongshifu.grm.groom/maya/nn_gongshifu__nn_gongshifu_hair_collection.abc@
+        string patch = ""
+        float frame = 1.0 
+        float fps = 24.0 
+    }
+}

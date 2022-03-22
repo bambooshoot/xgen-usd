@@ -28,8 +28,6 @@
 #include "pxr/usd/sdf/types.h"
 #include "pxr/usd/sdf/assetPath.h"
 
-#include "./tokens.h"
-
 PXR_NAMESPACE_OPEN_SCOPE
 
 // Register the schema with the TfType system.
@@ -77,9 +75,8 @@ UsdXGen::Define(
 }
 
 /* virtual */
-UsdSchemaKind UsdXGen::_GetSchemaKind() const
-{
-    return UsdXGen::schemaKind;
+UsdSchemaType UsdXGen::_GetSchemaType() const {
+    return UsdXGen::schemaType;
 }
 
 /* static */
