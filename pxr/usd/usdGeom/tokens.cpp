@@ -25,7 +25,7 @@
 
 PXR_NAMESPACE_OPEN_SCOPE
 
-UsdTokensType::UsdTokensType() :
+UsdXGenTokensType::UsdXGenTokensType() :
     description("description", TfToken::Immortal),
     extent("extent", TfToken::Immortal),
     file("file", TfToken::Immortal),
@@ -49,6 +49,6 @@ UsdTokensType::UsdTokensType() :
 {
 }
 
-TfStaticData<UsdTokensType> UsdTokens;
+TfStaticData<UsdXGenTokensType> UsdXGenTokens;
 
 PXR_NAMESPACE_CLOSE_SCOPE

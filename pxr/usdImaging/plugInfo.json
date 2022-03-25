@@ -1,0 +1,21 @@
+{
+    "Plugins": [
+        {
+            "Info": {
+                "Types": {
+                    "UsdImagingXGenAdapter": {
+                        "bases": [
+                            "UsdImagingGprimAdapter"
+                        ],
+                        "primTypeName": "UsdXGen"
+                    }
+                }
+            },
+            "LibraryPath": "@PLUG_INFO_LIBRARY_PATH@", 
+            "Name": "usdXGenImaging", 
+            "ResourcePath": "@PLUG_INFO_RESOURCE_PATH@", 
+            "Root": "@PLUG_INFO_ROOT@", 
+            "Type": "library"
+        }
+    ]
+}

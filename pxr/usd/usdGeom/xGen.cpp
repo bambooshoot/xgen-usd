@@ -105,13 +105,13 @@ UsdXGen::_GetTfType() const
 UsdAttribute
 UsdXGen::GetFileAttr() const
 {
-    return GetPrim().GetAttribute(UsdTokens->file);
+    return GetPrim().GetAttribute(UsdXGenTokens->file);
 }
 
 UsdAttribute
 UsdXGen::CreateFileAttr(VtValue const &defaultValue, bool writeSparsely) const
 {
-    return UsdSchemaBase::_CreateAttr(UsdTokens->file,
+    return UsdSchemaBase::_CreateAttr(UsdXGenTokens->file,
                        SdfValueTypeNames->Asset,
                        /* custom = */ false,
                        SdfVariabilityVarying,
@@ -122,13 +122,13 @@ UsdXGen::CreateFileAttr(VtValue const &defaultValue, bool writeSparsely) const
 UsdAttribute
 UsdXGen::GetPaletteAttr() const
 {
-    return GetPrim().GetAttribute(UsdTokens->palette);
+    return GetPrim().GetAttribute(UsdXGenTokens->palette);
 }
 
 UsdAttribute
 UsdXGen::CreatePaletteAttr(VtValue const &defaultValue, bool writeSparsely) const
 {
-    return UsdSchemaBase::_CreateAttr(UsdTokens->palette,
+    return UsdSchemaBase::_CreateAttr(UsdXGenTokens->palette,
                        SdfValueTypeNames->String,
                        /* custom = */ false,
                        SdfVariabilityVarying,
@@ -139,13 +139,13 @@ UsdXGen::CreatePaletteAttr(VtValue const &defaultValue, bool writeSparsely) cons
 UsdAttribute
 UsdXGen::GetDescriptionAttr() const
 {
-    return GetPrim().GetAttribute(UsdTokens->description);
+    return GetPrim().GetAttribute(UsdXGenTokens->description);
 }
 
 UsdAttribute
 UsdXGen::CreateDescriptionAttr(VtValue const &defaultValue, bool writeSparsely) const
 {
-    return UsdSchemaBase::_CreateAttr(UsdTokens->description,
+    return UsdSchemaBase::_CreateAttr(UsdXGenTokens->description,
                        SdfValueTypeNames->String,
                        /* custom = */ false,
                        SdfVariabilityVarying,
@@ -156,13 +156,13 @@ UsdXGen::CreateDescriptionAttr(VtValue const &defaultValue, bool writeSparsely) 
 UsdAttribute
 UsdXGen::GetGeomAttr() const
 {
-    return GetPrim().GetAttribute(UsdTokens->geom);
+    return GetPrim().GetAttribute(UsdXGenTokens->geom);
 }
 
 UsdAttribute
 UsdXGen::CreateGeomAttr(VtValue const &defaultValue, bool writeSparsely) const
 {
-    return UsdSchemaBase::_CreateAttr(UsdTokens->geom,
+    return UsdSchemaBase::_CreateAttr(UsdXGenTokens->geom,
                        SdfValueTypeNames->Asset,
                        /* custom = */ false,
                        SdfVariabilityVarying,
@@ -173,13 +173,13 @@ UsdXGen::CreateGeomAttr(VtValue const &defaultValue, bool writeSparsely) const
 UsdAttribute
 UsdXGen::GetPatchAttr() const
 {
-    return GetPrim().GetAttribute(UsdTokens->patch);
+    return GetPrim().GetAttribute(UsdXGenTokens->patch);
 }
 
 UsdAttribute
 UsdXGen::CreatePatchAttr(VtValue const &defaultValue, bool writeSparsely) const
 {
-    return UsdSchemaBase::_CreateAttr(UsdTokens->patch,
+    return UsdSchemaBase::_CreateAttr(UsdXGenTokens->patch,
                        SdfValueTypeNames->String,
                        /* custom = */ false,
                        SdfVariabilityVarying,
@@ -190,13 +190,13 @@ UsdXGen::CreatePatchAttr(VtValue const &defaultValue, bool writeSparsely) const
 UsdAttribute
 UsdXGen::GetFrameAttr() const
 {
-    return GetPrim().GetAttribute(UsdTokens->frame);
+    return GetPrim().GetAttribute(UsdXGenTokens->frame);
 }
 
 UsdAttribute
 UsdXGen::CreateFrameAttr(VtValue const &defaultValue, bool writeSparsely) const
 {
-    return UsdSchemaBase::_CreateAttr(UsdTokens->frame,
+    return UsdSchemaBase::_CreateAttr(UsdXGenTokens->frame,
                        SdfValueTypeNames->Float,
                        /* custom = */ false,
                        SdfVariabilityVarying,
@@ -207,13 +207,13 @@ UsdXGen::CreateFrameAttr(VtValue const &defaultValue, bool writeSparsely) const
 UsdAttribute
 UsdXGen::GetFpsAttr() const
 {
-    return GetPrim().GetAttribute(UsdTokens->fps);
+    return GetPrim().GetAttribute(UsdXGenTokens->fps);
 }
 
 UsdAttribute
 UsdXGen::CreateFpsAttr(VtValue const &defaultValue, bool writeSparsely) const
 {
-    return UsdSchemaBase::_CreateAttr(UsdTokens->fps,
+    return UsdSchemaBase::_CreateAttr(UsdXGenTokens->fps,
                        SdfValueTypeNames->Float,
                        /* custom = */ false,
                        SdfVariabilityVarying,
@@ -224,13 +224,13 @@ UsdXGen::CreateFpsAttr(VtValue const &defaultValue, bool writeSparsely) const
 UsdAttribute
 UsdXGen::GetWorldAttr() const
 {
-    return GetPrim().GetAttribute(UsdTokens->world);
+    return GetPrim().GetAttribute(UsdXGenTokens->world);
 }
 
 UsdAttribute
 UsdXGen::CreateWorldAttr(VtValue const &defaultValue, bool writeSparsely) const
 {
-    return UsdSchemaBase::_CreateAttr(UsdTokens->world,
+    return UsdSchemaBase::_CreateAttr(UsdXGenTokens->world,
                        SdfValueTypeNames->Matrix4d,
                        /* custom = */ false,
                        SdfVariabilityVarying,
@@ -241,13 +241,13 @@ UsdXGen::CreateWorldAttr(VtValue const &defaultValue, bool writeSparsely) const
 UsdAttribute
 UsdXGen::GetExtentAttr() const
 {
-    return GetPrim().GetAttribute(UsdTokens->extent);
+    return GetPrim().GetAttribute(UsdXGenTokens->extent);
 }
 
 UsdAttribute
 UsdXGen::CreateExtentAttr(VtValue const &defaultValue, bool writeSparsely) const
 {
-    return UsdSchemaBase::_CreateAttr(UsdTokens->extent,
+    return UsdSchemaBase::_CreateAttr(UsdXGenTokens->extent,
                        SdfValueTypeNames->Float3Array,
                        /* custom = */ false,
                        SdfVariabilityVarying,
@@ -272,15 +272,15 @@ const TfTokenVector&
 UsdXGen::GetSchemaAttributeNames(bool includeInherited)
 {
     static TfTokenVector localNames = {
-        UsdTokens->file,
-        UsdTokens->palette,
-        UsdTokens->description,
-        UsdTokens->geom,
-        UsdTokens->patch,
-        UsdTokens->frame,
-        UsdTokens->fps,
-        UsdTokens->world,
-        UsdTokens->extent,
+        UsdXGenTokens->file,
+        UsdXGenTokens->palette,
+        UsdXGenTokens->description,
+        UsdXGenTokens->geom,
+        UsdXGenTokens->patch,
+        UsdXGenTokens->frame,
+        UsdXGenTokens->fps,
+        UsdXGenTokens->world,
+        UsdXGenTokens->extent,
     };
     static TfTokenVector allNames =
         _ConcatenateAttributeNames(

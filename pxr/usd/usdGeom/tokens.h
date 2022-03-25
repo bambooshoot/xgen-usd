@@ -60,8 +60,8 @@ PXR_NAMESPACE_OPEN_SCOPE
 /// \code
 ///     gprim.GetMyTokenValuedAttr().Set(UsdTokens->description);
 /// \endcode
-struct UsdTokensType {
-    XGEN_API UsdTokensType();
+struct UsdXGenTokensType {
+    XGEN_API UsdXGenTokensType();
     /// \brief "description"
     /// 
     /// UsdXGen
@@ -106,7 +106,7 @@ struct UsdTokensType {
 ///
 /// A global variable with static, efficient \link TfToken TfTokens\endlink
 /// for use in all public USD API.  \sa UsdTokensType
-extern XGEN_API TfStaticData<UsdTokensType> UsdTokens;
+extern XGEN_API TfStaticData<UsdXGenTokensType> UsdXGenTokens;
 
 PXR_NAMESPACE_CLOSE_SCOPE
 
